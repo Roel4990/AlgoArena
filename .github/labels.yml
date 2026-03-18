@@ -1,0 +1,43 @@
+# GitHub Labels 설정
+# gh label create 명령어로 적용: cat .github/labels.yml | ...
+# 또는 GitHub CLI: gh label import .github/labels.yml
+
+- name: problem
+  color: "0075ca"
+  description: 이번 주 풀이 문제
+
+- name: discussion
+  color: "e4e669"
+  description: 토론 및 개념 공유
+
+- name: review-needed
+  color: "d93f0b"
+  description: 코드 리뷰 요청
+
+- name: reviewed
+  color: "0e8a16"
+  description: 리뷰 완료
+
+- name: DP
+  color: "bfd4f2"
+  description: 동적 프로그래밍
+
+- name: BFS/DFS
+  color: "bfd4f2"
+  description: 너비/깊이 우선 탐색
+
+- name: greedy
+  color: "bfd4f2"
+  description: 그리디
+
+- name: binary-search
+  color: "bfd4f2"
+  description: 이분 탐색
+
+- name: graph
+  color: "bfd4f2"
+  description: 그래프
+
+- name: string
+  color: "bfd4f2"
+  description: 문자열
