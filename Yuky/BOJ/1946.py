@@ -8,7 +8,6 @@ for _ in range(t):
     n = int(input())
     applicants = [tuple(map(int, input().split())) for _ in range(n)]
 
-    # 서류 성적 정렬
     applicants.sort()
 
     # 서류 1등
