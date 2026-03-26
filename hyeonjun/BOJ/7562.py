@@ -17,6 +17,8 @@ for _ in range(t):
         print(0)
         continue
 
+    found = False
+
     while q:
         cur_x, cur_y = q.popleft()
 
@@ -29,3 +31,6 @@ for _ in range(t):
                 if next_x == target_x and next_y == target_y:
                     print(visited[next_x][next_y])
                     break
+        
+        if found:
+            break
