@@ -30,6 +30,7 @@ for _ in range(t):
 
                 if next_x == target_x and next_y == target_y:
                     print(visited[next_x][next_y])
+                    found = True
                     break
         
         if found:
