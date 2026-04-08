@@ -12,4 +12,4 @@ for i in range(2, n+1):
     else:
         answer.append(answer[i-1]*2 - 1)
 
-print(answer[n]%100007)
+print(answer[n]%10007)
