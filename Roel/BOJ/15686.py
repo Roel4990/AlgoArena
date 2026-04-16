@@ -6,25 +6,22 @@ N, M = map(int, input().split())
 
 chickenPoints = []
 housePoints = []
-for r in range(1, N+1):
-    rcs = list(map(int, input().split()))
-    for c in range(1, N + 1):
-        if rcs[c-1] == 1:
+for r in range(1, N + 1):
+    for c, val in enumerate(map(int, input().split()), 1):
+        if val == 1:
             housePoints.append((r, c))
-        elif rcs[c-1] == 2:
+        elif val == 2:
             chickenPoints.append((r, c))
 
-chickenPointsPositions = list(combinations(chickenPoints, M))
 minValueResult = sys.maxsize
-for chickenPointsPosition in chickenPointsPositions:
-    minList = []
-    for housePoint in housePoints:
-        minValue = sys.maxsize
-        for chickenPoint in chickenPointsPosition:
-            distance = abs(chickenPoint[0] - housePoint[0]) + abs(chickenPoint[1] - housePoint[1])
-            if distance < minValue:
-                minValue = distance
-        minList.append(minValue)
-    if sum(minList) < minValueResult:
-        minValueResult = sum(minList)
+for selectedChickens in combinations(chickenPoints, M):
+    totalDistance = 0
+    for hr, hc in housePoints:
+        totalDistance += min(
+            abs(cr - hr) + abs(cc - hc)
+            for cr, cc in selectedChickens
+        )
+    if totalDistance < minValueResult:
+        minValueResult = totalDistance
+
 print(minValueResult)
